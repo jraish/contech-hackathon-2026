@@ -1,4 +1,4 @@
-import React, { useMemo } from "react";
+import React from "react";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Sky } from "@react-three/drei";
 import BuildingMesh from "./BuildingMesh";
@@ -8,55 +8,60 @@ function GroundPlane() {
   return (
     <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, 0, 0]} receiveShadow>
       <planeGeometry args={[2000, 2000]} />
-      <meshStandardMaterial color="#2d4a2d" />
+      <meshStandardMaterial color="#c8d4b8" roughness={1} metalness={0} />
     </mesh>
   );
 }
 
-function Scene({ sceneData, solarData }) {
-  // Figure out a good camera distance based on the scene extents
-  const cameraDistance = 300;
+function buildAnalysisMap(analyzeData) {
+  if (!analyzeData) return null;
+  const buildings = analyzeData.buildings ?? analyzeData;
+  const map = {};
+  for (const b of buildings) {
+    map[b.bin] = b.meshes ?? b.faces ?? [];
+  }
+  return map;
+}
+
+function Scene({ sceneData, solarData, analyzeData, sunIndex }) {
+  const sun = solarData[sunIndex] ?? solarData[0];
+  const analysisMap = buildAnalysisMap(analyzeData);
+  const showAnalysis = analysisMap !== null;
 
   return (
     <Canvas
-      style={{ width: "100vw", height: "100vh" }}
-      shadows
-      camera={{
-        position: [cameraDistance, cameraDistance * 0.5, cameraDistance],
-        fov: 45,
-        near: 1,
-        far: 10000,
-      }}
+      style={{ width: "100%", height: "100%" }}
+      shadows="soft"
+      camera={{ position: [300, 150, 300], fov: 45, near: 1, far: 10000 }}
     >
-      {/* Ambient fill so shadowed areas aren't pitch black */}
-      <ambientLight intensity={0.3} />
+      <ambientLight intensity={0.5} />
 
-      {/* Sky background — moves with sun position */}
       <Sky
         distance={4500}
-        sunPosition={solarData[6]?.vector ?? [1, 0.5, 0]}
+        sunPosition={sun ? [sun.vector[0], sun.vector[2], -sun.vector[1]] : [1, 0.5, 0]}
         inclination={0}
         azimuth={0.25}
       />
 
-      <SunLight solarData={solarData} />
-
-      {/* Ground */}
+      <SunLight sun={sun} />
       <GroundPlane />
 
-      {/* Buildings */}
       {sceneData.buildings.map((b, i) => (
-        <BuildingMesh key={i} building={b} />
+        <BuildingMesh
+          key={b.bin ?? i}
+          building={b}
+          analysisData={analysisMap ? analysisMap[b.bin] ?? null : null}
+          showAnalysis={showAnalysis}
+        />
       ))}
 
-      {/* Orbit locked to vertical axis — no flipping upside down */}
       <OrbitControls
-        target={[0, 40, 0]}          // look at mid-building height
-        maxPolarAngle={Math.PI / 2.2} // can't go below ground
-        minPolarAngle={0.1}           // can't go straight up
-        enablePan={true}
-        enableZoom={true}
-        enableRotate={true}
+        target={[0, 40, 0]}
+        maxPolarAngle={Math.PI / 2.2}
+        minPolarAngle={0.1}
+        enablePan
+        enableZoom
+        enableRotate
       />
     </Canvas>
   );

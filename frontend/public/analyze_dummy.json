@@ -1,0 +1,59 @@
+{
+  "buildings": [
+    {
+      "bin": "1079043",
+      "meshes": [
+        { "face_type": "roof",  "sun_hours": 8.0, "sun_fraction": 1.0  },
+        { "face_type": "wall",  "sun_hours": 3.0, "sun_fraction": 0.375 },
+        { "face_type": "wall",  "sun_hours": 5.0, "sun_fraction": 0.625 },
+        { "face_type": "wall",  "sun_hours": 6.0, "sun_fraction": 0.75  },
+        { "face_type": "wall",  "sun_hours": 2.0, "sun_fraction": 0.25  },
+        { "face_type": "floor", "sun_hours": 0.0, "sun_fraction": 0.0   }
+      ]
+    },
+    {
+      "bin": "1079044",
+      "meshes": [
+        { "face_type": "roof",  "sun_hours": 8.0, "sun_fraction": 1.0    },
+        { "face_type": "wall",  "sun_hours": 3.5, "sun_fraction": 0.4375 },
+        { "face_type": "wall",  "sun_hours": 4.5, "sun_fraction": 0.5625 },
+        { "face_type": "wall",  "sun_hours": 5.5, "sun_fraction": 0.6875 },
+        { "face_type": "wall",  "sun_hours": 1.5, "sun_fraction": 0.1875 },
+        { "face_type": "floor", "sun_hours": 0.0, "sun_fraction": 0.0    }
+      ]
+    },
+    {
+      "bin": "1079045",
+      "meshes": [
+        { "face_type": "roof",  "sun_hours": 8.0, "sun_fraction": 1.0    },
+        { "face_type": "wall",  "sun_hours": 2.0, "sun_fraction": 0.25   },
+        { "face_type": "wall",  "sun_hours": 6.5, "sun_fraction": 0.8125 },
+        { "face_type": "wall",  "sun_hours": 7.0, "sun_fraction": 0.875  },
+        { "face_type": "wall",  "sun_hours": 1.0, "sun_fraction": 0.125  },
+        { "face_type": "floor", "sun_hours": 0.0, "sun_fraction": 0.0    }
+      ]
+    },
+    {
+      "bin": "1079046",
+      "meshes": [
+        { "face_type": "roof",  "sun_hours": 8.0, "sun_fraction": 1.0    },
+        { "face_type": "wall",  "sun_hours": 4.0, "sun_fraction": 0.5    },
+        { "face_type": "wall",  "sun_hours": 5.0, "sun_fraction": 0.625  },
+        { "face_type": "wall",  "sun_hours": 6.0, "sun_fraction": 0.75   },
+        { "face_type": "wall",  "sun_hours": 0.5, "sun_fraction": 0.0625 },
+        { "face_type": "floor", "sun_hours": 0.0, "sun_fraction": 0.0    }
+      ]
+    },
+    {
+      "bin": "1079047",
+      "meshes": [
+        { "face_type": "roof",  "sun_hours": 8.0, "sun_fraction": 1.0    },
+        { "face_type": "wall",  "sun_hours": 3.0, "sun_fraction": 0.375  },
+        { "face_type": "wall",  "sun_hours": 5.5, "sun_fraction": 0.6875 },
+        { "face_type": "wall",  "sun_hours": 7.5, "sun_fraction": 0.9375 },
+        { "face_type": "wall",  "sun_hours": 1.0, "sun_fraction": 0.125  },
+        { "face_type": "floor", "sun_hours": 0.0, "sun_fraction": 0.0    }
+      ]
+    }
+  ]
+}

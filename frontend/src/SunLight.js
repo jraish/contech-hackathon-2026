@@ -1,16 +1,19 @@
 import React from "react";
 
-function SunLight({ solarData }) {
-  // Use midday sun (index 6 ~ noon) as the default light position
-  const sun = solarData[6] ?? solarData[0];
-  const [x, y, z] = sun.vector;
+function SunLight({ sun }) {
+  if (!sun) return null;
 
-  const dist = 800; // far enough to act like a directional light
+  // Remap Z-up solar vector → Three.js Y-up
+  const [sx, sy, sz] = sun.vector;
+  const dist = 800;
+  const tx = sx * dist;
+  const ty = sz * dist;   // Z (elevation) → Three.js Y
+  const tz = -sy * dist;  // Y (north) → Three.js -Z
 
   return (
     <>
       <directionalLight
-        position={[x * dist, z * dist, -y * dist]} // Three.js: Y=up, Z=toward viewer
+        position={[tx, ty, tz]}
         intensity={1.5}
         castShadow
         shadow-mapSize-width={2048}
@@ -22,9 +25,8 @@ function SunLight({ solarData }) {
         shadow-camera-top={600}
         shadow-camera-bottom={-600}
       />
-
       {/* Visible sun sphere */}
-      <mesh position={[x * dist, z * dist, -y * dist]}>
+      <mesh position={[tx, ty, tz]}>
         <sphereGeometry args={[12, 16, 16]} />
         <meshBasicMaterial color="#fff5a0" />
       </mesh>
