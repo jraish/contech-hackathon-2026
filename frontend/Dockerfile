@@ -1,27 +1,9 @@
-# Build stage
 FROM node:20-slim AS builder
 
 WORKDIR /app
 
 COPY package*.json ./
-RUN npm install
+RUN npm ci
 
 COPY . .
 RUN npm run build
-
-# The static_site component on App Platform just needs the build output.
-# This Dockerfile is mostly used for local Docker Compose testing.
-# In production, App Platform reads output_dir = "/app/dist" directly.
-FROM nginx:alpine
-COPY --from=builder /app/build /usr/share/nginx/html
-
-# Simple nginx config that supports React Router (no 404 on refresh)
-RUN echo 'server { \
-  listen 80; \
-  location / { \
-    root /usr/share/nginx/html; \
-    try_files $uri $uri/ /index.html; \
-  } \
-}' > /etc/nginx/conf.d/default.conf
-
-EXPOSE 80
