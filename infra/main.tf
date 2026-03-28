@@ -20,21 +20,18 @@ resource "digitalocean_app" "solar_app" {
     service {
       name               = "backend"
       instance_count     = 1
-      instance_size_slug = "apps-s-1vcpu-0.5gb" # cheapest tier ~$5/mo
+      instance_size_slug = "apps-s-1vcpu-0.5gb"
 
-      # App Platform builds the Docker image straight from your repo
       github {
-        repo           = var.github_repo   # e.g. "yourorg/solar-buildings"
-        branch         = var.github_branch # e.g. "main"
+        repo           = var.github_repo
+        branch         = var.github_branch
         deploy_on_push = true
       }
 
-      # Path to the Dockerfile inside your repo
       dockerfile_path = "backend/Dockerfile"
 
-      # Internal only — NOT exposed to the internet
-      # The frontend reaches it via the internal service name: http://backend
-      internal_ports = [8000]
+      # Public port — required for ingress routing to work
+      http_port = 8000
 
       health_check {
         http_path             = "/health"
@@ -42,7 +39,6 @@ resource "digitalocean_app" "solar_app" {
         period_seconds        = 30
       }
 
-      # Secrets injected as environment variables — values come from variables.tf
       env {
         key   = "NYC_OPEN_DATA_URL"
         value = "https://data.cityofnewyork.us/resource/5zhs-2jue.json"
@@ -57,7 +53,7 @@ resource "digitalocean_app" "solar_app" {
       }
     }
 
-    # ── Frontend (React, served as static files) ──────────────────────────────
+    # ── Frontend (React static site) ──────────────────────────────────────────
     static_site {
       name = "frontend"
 
@@ -67,28 +63,23 @@ resource "digitalocean_app" "solar_app" {
         deploy_on_push = true
       }
 
-      dockerfile_path = "frontend/Dockerfile"
-      output_dir      = "/app/build" # wherever `npm run build` outputs to
-
-      # Rewrite all paths to index.html so React Router works
+      dockerfile_path   = "frontend/Dockerfile"
+      output_dir        = "/app/build"
       catchall_document = "index.html"
 
-      # Tell the frontend where the backend lives.
-      # App Platform gives each service an internal hostname: http://<service-name>
-      # But the browser can't reach internal services — so we use a route proxy instead.
-      # See the route block below.
       env {
-        key   = "VITE_API_URL"
-        value = "/api" # frontend calls /api/..., which gets proxied to backend
+        key   = "REACT_APP_API_URL"
+        value = "/api"
         scope = "BUILD_TIME"
       }
     }
 
-    # ── Ingress: route /api/* to backend, everything else to frontend ─────────
+    # ── Ingress: /api/* → backend, everything else → frontend ─────────────────
     ingress {
       rule {
         component {
-          name = "backend"
+          name                 = "backend"
+          preserve_path_prefix = false
         }
         match {
           path {
