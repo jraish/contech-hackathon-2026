@@ -1,0 +1,33 @@
+version: "3.9"
+
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"          # exposed locally for direct testing
+    environment:
+      NYC_OPEN_DATA_URL: "https://data.cityofnewyork.us/resource/5zhs-2jue.json"
+      NYC_APP_TOKEN: "${NYC_APP_TOKEN:-}"   # optional, pulled from your shell env
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+      args:
+        # Locally, the frontend talks directly to the backend container
+        VITE_API_URL: "http://localhost:8000"
+    ports:
+      - "3000:80"
+    depends_on:
+      backend:
+        condition: service_healthy
+
+# In production (App Platform), the /api proxy handles routing.
+# Locally, the frontend hits localhost:8000 directly.
