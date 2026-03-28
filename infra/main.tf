@@ -20,12 +20,12 @@ resource "digitalocean_app" "solar_app" {
     service {
       name               = "backend"
       instance_count     = 1
-      instance_size_slug = "apps-s-1vcpu-0.5gb"  # cheapest tier ~$5/mo
+      instance_size_slug = "apps-s-1vcpu-0.5gb" # cheapest tier ~$5/mo
 
       # App Platform builds the Docker image straight from your repo
       github {
-        repo           = var.github_repo        # e.g. "yourorg/solar-buildings"
-        branch         = var.github_branch      # e.g. "main"
+        repo           = var.github_repo   # e.g. "yourorg/solar-buildings"
+        branch         = var.github_branch # e.g. "main"
         deploy_on_push = true
       }
 
@@ -67,8 +67,8 @@ resource "digitalocean_app" "solar_app" {
         deploy_on_push = true
       }
 
-      dockerfile_path    = "frontend/Dockerfile"
-      output_dir         = "/app/dist"   # wherever `npm run build` outputs to
+      dockerfile_path = "frontend/Dockerfile"
+      output_dir      = "/app/build" # wherever `npm run build` outputs to
 
       # Rewrite all paths to index.html so React Router works
       catchall_document = "index.html"
@@ -79,7 +79,7 @@ resource "digitalocean_app" "solar_app" {
       # See the route block below.
       env {
         key   = "VITE_API_URL"
-        value = "/api"   # frontend calls /api/..., which gets proxied to backend
+        value = "/api" # frontend calls /api/..., which gets proxied to backend
         scope = "BUILD_TIME"
       }
     }

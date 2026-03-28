@@ -4,7 +4,7 @@ FROM node:20-slim AS builder
 WORKDIR /app
 
 COPY package*.json ./
-RUN npm ci
+RUN npm install
 
 COPY . .
 RUN npm run build
@@ -13,7 +13,7 @@ RUN npm run build
 # This Dockerfile is mostly used for local Docker Compose testing.
 # In production, App Platform reads output_dir = "/app/dist" directly.
 FROM nginx:alpine
-COPY --from=builder /app/dist /usr/share/nginx/html
+COPY --from=builder /app/build /usr/share/nginx/html
 
 # Simple nginx config that supports React Router (no 404 on refresh)
 RUN echo 'server { \

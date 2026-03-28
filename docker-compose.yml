@@ -22,7 +22,7 @@ services:
       dockerfile: Dockerfile
       args:
         # Locally, the frontend talks directly to the backend container
-        VITE_API_URL: "http://localhost:8000"
+        REACT_APP_API_URL: "http://localhost:8000"
     ports:
       - "3000:80"
     depends_on:

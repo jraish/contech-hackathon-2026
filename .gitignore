@@ -1,2 +1,3 @@
 infra/terraform.tfvars
-
+frontend/node_modules
+infra/.terraform*
