@@ -1,0 +1,80 @@
+[
+  {
+    "hour": 6,
+    "azimuth": 67.3,
+    "elevation": 5.2,
+    "vector": [0.921, 0.383, 0.091]
+  },
+  {
+    "hour": 7,
+    "azimuth": 78.4,
+    "elevation": 18.7,
+    "vector": [0.975, 0.198, 0.321]
+  },
+  {
+    "hour": 8,
+    "azimuth": 90.1,
+    "elevation": 32.1,
+    "vector": [1.000, 0.002, 0.530]
+  },
+  {
+    "hour": 9,
+    "azimuth": 103.5,
+    "elevation": 45.0,
+    "vector": [0.972, -0.233, 0.707]
+  },
+  {
+    "hour": 10,
+    "azimuth": 120.2,
+    "elevation": 56.3,
+    "vector": [0.862, -0.500, 0.832]
+  },
+  {
+    "hour": 11,
+    "azimuth": 142.8,
+    "elevation": 64.8,
+    "vector": [0.603, -0.794, 0.905]
+  },
+  {
+    "hour": 12,
+    "azimuth": 171.4,
+    "elevation": 68.9,
+    "vector": [0.143, -0.989, 0.934]
+  },
+  {
+    "hour": 13,
+    "azimuth": 200.1,
+    "elevation": 67.2,
+    "vector": [-0.358, -0.934, 0.921]
+  },
+  {
+    "hour": 14,
+    "azimuth": 224.5,
+    "elevation": 59.4,
+    "vector": [-0.698, -0.716, 0.861]
+  },
+  {
+    "hour": 15,
+    "azimuth": 243.8,
+    "elevation": 48.1,
+    "vector": [-0.894, -0.447, 0.743]
+  },
+  {
+    "hour": 16,
+    "azimuth": 259.2,
+    "elevation": 35.2,
+    "vector": [-0.982, -0.186, 0.575]
+  },
+  {
+    "hour": 17,
+    "azimuth": 272.5,
+    "elevation": 21.6,
+    "vector": [-0.999, 0.044, 0.368]
+  },
+  {
+    "hour": 18,
+    "azimuth": 284.8,
+    "elevation": 8.3,
+    "vector": [-0.966, 0.259, 0.144]
+  }
+]

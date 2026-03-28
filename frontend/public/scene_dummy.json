@@ -1,0 +1,333 @@
+{
+  "center": {
+    "lat": 40.7580,
+    "lon": -73.9855
+  },
+  "buildings": [
+    {
+      "bin": "1079043",
+      "meshes": [
+        {
+          "face_type": "roof",
+          "vertices": [
+            [10, 20, 85], [40, 20, 85], [40, 50, 85], [10, 50, 85]
+          ],
+          "indices": [0, 1, 2, 0, 2, 3],
+          "normal": [0, 0, 1],
+          "sun_hours": 8.0,
+          "sun_fraction": 1.0
+        },
+        {
+          "face_type": "wall",
+          "vertices": [
+            [10, 20, 0], [40, 20, 0], [40, 20, 85], [10, 20, 85]
+          ],
+          "indices": [0, 1, 2, 0, 2, 3],
+          "normal": [0, -1, 0],
+          "sun_hours": 3.0,
+          "sun_fraction": 0.375
+        },
+        {
+          "face_type": "wall",
+          "vertices": [
+            [40, 20, 0], [40, 50, 0], [40, 50, 85], [40, 20, 85]
+          ],
+          "indices": [0, 1, 2, 0, 2, 3],
+          "normal": [1, 0, 0],
+          "sun_hours": 5.0,
+          "sun_fraction": 0.625
+        },
+        {
+          "face_type": "wall",
+          "vertices": [
+            [40, 50, 0], [10, 50, 0], [10, 50, 85], [40, 50, 85]
+          ],
+          "indices": [0, 1, 2, 0, 2, 3],
+          "normal": [0, 1, 0],
+          "sun_hours": 6.0,
+          "sun_fraction": 0.75
+        },
+        {
+          "face_type": "wall",
+          "vertices": [
+            [10, 50, 0], [10, 20, 0], [10, 20, 85], [10, 50, 85]
+          ],
+          "indices": [0, 1, 2, 0, 2, 3],
+          "normal": [-1, 0, 0],
+          "sun_hours": 2.0,
+          "sun_fraction": 0.25
+        },
+        {
+          "face_type": "floor",
+          "vertices": [
+            [10, 20, 0], [10, 50, 0], [40, 50, 0], [40, 20, 0]
+          ],
+          "indices": [0, 1, 2, 0, 2, 3],
+          "normal": [0, 0, -1],
+          "sun_hours": 0,
+          "sun_fraction": 0.0
+        }
+      ]
+    },
+    {
+      "bin": "1079044",
+      "meshes": [
+        {
+          "face_type": "roof",
+          "vertices": [
+            [-60, -30, 120], [-20, -30, 120], [-20, 10, 120], [-60, 10, 120]
+          ],
+          "indices": [0, 1, 2, 0, 2, 3],
+          "normal": [0, 0, 1],
+          "sun_hours": 8.0,
+          "sun_fraction": 1.0
+        },
+        {
+          "face_type": "wall",
+          "vertices": [
+            [-60, -30, 0], [-20, -30, 0], [-20, -30, 120], [-60, -30, 120]
+          ],
+          "indices": [0, 1, 2, 0, 2, 3],
+          "normal": [0, -1, 0],
+          "sun_hours": 3.5,
+          "sun_fraction": 0.4375
+        },
+        {
+          "face_type": "wall",
+          "vertices": [
+            [-20, -30, 0], [-20, 10, 0], [-20, 10, 120], [-20, -30, 120]
+          ],
+          "indices": [0, 1, 2, 0, 2, 3],
+          "normal": [1, 0, 0],
+          "sun_hours": 4.5,
+          "sun_fraction": 0.5625
+        },
+        {
+          "face_type": "wall",
+          "vertices": [
+            [-20, 10, 0], [-60, 10, 0], [-60, 10, 120], [-20, 10, 120]
+          ],
+          "indices": [0, 1, 2, 0, 2, 3],
+          "normal": [0, 1, 0],
+          "sun_hours": 5.5,
+          "sun_fraction": 0.6875
+        },
+        {
+          "face_type": "wall",
+          "vertices": [
+            [-60, 10, 0], [-60, -30, 0], [-60, -30, 120], [-60, 10, 120]
+          ],
+          "indices": [0, 1, 2, 0, 2, 3],
+          "normal": [-1, 0, 0],
+          "sun_hours": 1.5,
+          "sun_fraction": 0.1875
+        },
+        {
+          "face_type": "floor",
+          "vertices": [
+            [-60, -30, 0], [-60, 10, 0], [-20, 10, 0], [-20, -30, 0]
+          ],
+          "indices": [0, 1, 2, 0, 2, 3],
+          "normal": [0, 0, -1],
+          "sun_hours": 0,
+          "sun_fraction": 0.0
+        }
+      ]
+    },
+    {
+      "bin": "1079045",
+      "meshes": [
+        {
+          "face_type": "roof",
+          "vertices": [
+            [60, -80, 45], [110, -80, 45], [110, -40, 45], [60, -40, 45]
+          ],
+          "indices": [0, 1, 2, 0, 2, 3],
+          "normal": [0, 0, 1],
+          "sun_hours": 8.0,
+          "sun_fraction": 1.0
+        },
+        {
+          "face_type": "wall",
+          "vertices": [
+            [60, -80, 0], [110, -80, 0], [110, -80, 45], [60, -80, 45]
+          ],
+          "indices": [0, 1, 2, 0, 2, 3],
+          "normal": [0, -1, 0],
+          "sun_hours": 2.0,
+          "sun_fraction": 0.25
+        },
+        {
+          "face_type": "wall",
+          "vertices": [
+            [110, -80, 0], [110, -40, 0], [110, -40, 45], [110, -80, 45]
+          ],
+          "indices": [0, 1, 2, 0, 2, 3],
+          "normal": [1, 0, 0],
+          "sun_hours": 6.5,
+          "sun_fraction": 0.8125
+        },
+        {
+          "face_type": "wall",
+          "vertices": [
+            [110, -40, 0], [60, -40, 0], [60, -40, 45], [110, -40, 45]
+          ],
+          "indices": [0, 1, 2, 0, 2, 3],
+          "normal": [0, 1, 0],
+          "sun_hours": 7.0,
+          "sun_fraction": 0.875
+        },
+        {
+          "face_type": "wall",
+          "vertices": [
+            [60, -40, 0], [60, -80, 0], [60, -80, 45], [60, -40, 45]
+          ],
+          "indices": [0, 1, 2, 0, 2, 3],
+          "normal": [-1, 0, 0],
+          "sun_hours": 1.0,
+          "sun_fraction": 0.125
+        },
+        {
+          "face_type": "floor",
+          "vertices": [
+            [60, -80, 0], [60, -40, 0], [110, -40, 0], [110, -80, 0]
+          ],
+          "indices": [0, 1, 2, 0, 2, 3],
+          "normal": [0, 0, -1],
+          "sun_hours": 0,
+          "sun_fraction": 0.0
+        }
+      ]
+    },
+    {
+      "bin": "1079046",
+      "meshes": [
+        {
+          "face_type": "roof",
+          "vertices": [
+            [-120, 60, 200], [-70, 60, 200], [-70, 110, 200], [-120, 110, 200]
+          ],
+          "indices": [0, 1, 2, 0, 2, 3],
+          "normal": [0, 0, 1],
+          "sun_hours": 8.0,
+          "sun_fraction": 1.0
+        },
+        {
+          "face_type": "wall",
+          "vertices": [
+            [-120, 60, 0], [-70, 60, 0], [-70, 60, 200], [-120, 60, 200]
+          ],
+          "indices": [0, 1, 2, 0, 2, 3],
+          "normal": [0, -1, 0],
+          "sun_hours": 4.0,
+          "sun_fraction": 0.5
+        },
+        {
+          "face_type": "wall",
+          "vertices": [
+            [-70, 60, 0], [-70, 110, 0], [-70, 110, 200], [-70, 60, 200]
+          ],
+          "indices": [0, 1, 2, 0, 2, 3],
+          "normal": [1, 0, 0],
+          "sun_hours": 5.0,
+          "sun_fraction": 0.625
+        },
+        {
+          "face_type": "wall",
+          "vertices": [
+            [-70, 110, 0], [-120, 110, 0], [-120, 110, 200], [-70, 110, 200]
+          ],
+          "indices": [0, 1, 2, 0, 2, 3],
+          "normal": [0, 1, 0],
+          "sun_hours": 6.0,
+          "sun_fraction": 0.75
+        },
+        {
+          "face_type": "wall",
+          "vertices": [
+            [-120, 110, 0], [-120, 60, 0], [-120, 60, 200], [-120, 110, 200]
+          ],
+          "indices": [0, 1, 2, 0, 2, 3],
+          "normal": [-1, 0, 0],
+          "sun_hours": 0.5,
+          "sun_fraction": 0.0625
+        },
+        {
+          "face_type": "floor",
+          "vertices": [
+            [-120, 60, 0], [-120, 110, 0], [-70, 110, 0], [-70, 60, 0]
+          ],
+          "indices": [0, 1, 2, 0, 2, 3],
+          "normal": [0, 0, -1],
+          "sun_hours": 0,
+          "sun_fraction": 0.0
+        }
+      ]
+    },
+    {
+      "bin": "1079047",
+      "meshes": [
+        {
+          "face_type": "roof",
+          "vertices": [
+            [80, 90, 60], [140, 90, 60], [140, 150, 60], [80, 150, 60]
+          ],
+          "indices": [0, 1, 2, 0, 2, 3],
+          "normal": [0, 0, 1],
+          "sun_hours": 8.0,
+          "sun_fraction": 1.0
+        },
+        {
+          "face_type": "wall",
+          "vertices": [
+            [80, 90, 0], [140, 90, 0], [140, 90, 60], [80, 90, 60]
+          ],
+          "indices": [0, 1, 2, 0, 2, 3],
+          "normal": [0, -1, 0],
+          "sun_hours": 3.0,
+          "sun_fraction": 0.375
+        },
+        {
+          "face_type": "wall",
+          "vertices": [
+            [140, 90, 0], [140, 150, 0], [140, 150, 60], [140, 90, 60]
+          ],
+          "indices": [0, 1, 2, 0, 2, 3],
+          "normal": [1, 0, 0],
+          "sun_hours": 5.5,
+          "sun_fraction": 0.6875
+        },
+        {
+          "face_type": "wall",
+          "vertices": [
+            [140, 150, 0], [80, 150, 0], [80, 150, 60], [140, 150, 60]
+          ],
+          "indices": [0, 1, 2, 0, 2, 3],
+          "normal": [0, 1, 0],
+          "sun_hours": 7.5,
+          "sun_fraction": 0.9375
+        },
+        {
+          "face_type": "wall",
+          "vertices": [
+            [80, 150, 0], [80, 90, 0], [80, 90, 60], [80, 150, 60]
+          ],
+          "indices": [0, 1, 2, 0, 2, 3],
+          "normal": [-1, 0, 0],
+          "sun_hours": 1.0,
+          "sun_fraction": 0.125
+        },
+        {
+          "face_type": "floor",
+          "vertices": [
+            [80, 90, 0], [80, 150, 0], [140, 150, 0], [140, 90, 0]
+          ],
+          "indices": [0, 1, 2, 0, 2, 3],
+          "normal": [0, 0, -1],
+          "sun_hours": 0,
+          "sun_fraction": 0.0
+        }
+      ]
+    }
+  ]
+}
