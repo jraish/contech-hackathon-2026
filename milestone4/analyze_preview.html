@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><title>UMBRA Shadow Analysis Preview</title>
+<style>
+body{font-family:system-ui;padding:2rem;background:#fafafa;max-width:900px;margin:0 auto}
+h2{color:#333} .legend{display:flex;gap:12px;align-items:center;margin:1rem 0}
+table{border-collapse:collapse;width:100%;margin-top:1rem}
+th,td{padding:6px 12px;text-align:left;border-bottom:1px solid #e0e0e0;font-size:13px}
+th{background:#f5f5f5;font-weight:600}
+svg{border:1px solid #ddd;border-radius:8px;background:#1a1a2e;display:block;margin:1rem auto}
+</style></head>
+<body>
+<h2>🏢 UMBRA Shadow Analysis — Dummy Scene</h2>
+<p>3 buildings · 10 sun hours analyzed (NYC summer day)</p>
+<div class="legend"><strong>Sun exposure:</strong> <span style="display:inline-block;width:30px;height:14px;background:rgb(30,80,250);border-radius:2px"></span> 0% <span style="display:inline-block;width:30px;height:14px;background:rgb(22,123,200);border-radius:2px"></span> 25% <span style="display:inline-block;width:30px;height:14px;background:rgb(15,167,150);border-radius:2px"></span> 50% <span style="display:inline-block;width:30px;height:14px;background:rgb(7,211,100);border-radius:2px"></span> 75% <span style="display:inline-block;width:30px;height:14px;background:rgb(0,255,50);border-radius:2px"></span> 100%</div>
+
+<svg width="600" height="600" viewBox="0 0 600 600">
+  <!-- Grid -->
+  <text x="10" y="20" font-size="10" fill="#666">Top-down view (meters)</text>
+  <polygon points="258.9,394.6 313.7,394.6 313.7,339.8 258.9,339.8" fill="rgb(17,154,165)" stroke="#333" stroke-width="1.5" opacity="0.85">
+    <title>BIN 1234567
+Avg Sun: 42%</title>
+  </polygon>  <polygon points="94.3,183.4 176.6,183.4 176.6,87.4 94.3,87.4" fill="rgb(15,167,150)" stroke="#333" stroke-width="1.5" opacity="0.85">
+    <title>BIN 2345678
+Avg Sun: 50%</title>
+  </polygon>  <polygon points="396.0,512.6 505.7,512.6 505.7,402.9 396.0,402.9" fill="rgb(15,167,150)" stroke="#333" stroke-width="1.5" opacity="0.85">
+    <title>BIN 3456789
+Avg Sun: 50%</title>
+  </polygon>
+  <text x="286.3" y="367.2" text-anchor="middle" font-size="11" fill="#fff" font-weight="bold">1234567</text>
+  <text x="286.3" y="381.2" text-anchor="middle" font-size="10" fill="#fff">42% sun</text>  <text x="135.4" y="135.4" text-anchor="middle" font-size="11" fill="#fff" font-weight="bold">2345678</text>
+  <text x="135.4" y="149.4" text-anchor="middle" font-size="10" fill="#fff">50% sun</text>  <text x="450.9" y="457.7" text-anchor="middle" font-size="11" fill="#fff" font-weight="bold">3456789</text>
+  <text x="450.9" y="471.7" text-anchor="middle" font-size="10" fill="#fff">50% sun</text>
+</svg>
+
+<h3>Wall Face Details</h3>
+<table>
+<tr><th>BIN</th><th>Wall Facing</th><th>Sun Hours</th><th>Exposure</th></tr>
+<tr><td>1234567</td><td>E</td><td>6/10</td><td><div style="background:rgb(12,185,130);width:90px;height:14px;border-radius:2px;display:inline-block"></div> 60%</td></tr><tr><td>1234567</td><td>S</td><td>4/10</td><td><div style="background:rgb(18,150,170);width:60px;height:14px;border-radius:2px;display:inline-block"></div> 40%</td></tr><tr><td>1234567</td><td>N</td><td>4/10</td><td><div style="background:rgb(18,150,170);width:60px;height:14px;border-radius:2px;display:inline-block"></div> 40%</td></tr><tr><td>1234567</td><td>W</td><td>3/10</td><td><div style="background:rgb(21,132,190);width:45px;height:14px;border-radius:2px;display:inline-block"></div> 30%</td></tr><tr><td>2345678</td><td>E</td><td>7/10</td><td><div style="background:rgb(9,202,110);width:105px;height:14px;border-radius:2px;display:inline-block"></div> 70%</td></tr><tr><td>2345678</td><td>S</td><td>6/10</td><td><div style="background:rgb(12,185,130);width:90px;height:14px;border-radius:2px;display:inline-block"></div> 60%</td></tr><tr><td>2345678</td><td>N</td><td>4/10</td><td><div style="background:rgb(18,150,170);width:60px;height:14px;border-radius:2px;display:inline-block"></div> 40%</td></tr><tr><td>2345678</td><td>W</td><td>3/10</td><td><div style="background:rgb(21,132,190);width:45px;height:14px;border-radius:2px;display:inline-block"></div> 30%</td></tr><tr><td>3456789</td><td>E</td><td>7/10</td><td><div style="background:rgb(9,202,110);width:105px;height:14px;border-radius:2px;display:inline-block"></div> 70%</td></tr><tr><td>3456789</td><td>S</td><td>6/10</td><td><div style="background:rgb(12,185,130);width:90px;height:14px;border-radius:2px;display:inline-block"></div> 60%</td></tr><tr><td>3456789</td><td>N</td><td>4/10</td><td><div style="background:rgb(18,150,170);width:60px;height:14px;border-radius:2px;display:inline-block"></div> 40%</td></tr><tr><td>3456789</td><td>W</td><td>3/10</td><td><div style="background:rgb(21,132,190);width:45px;height:14px;border-radius:2px;display:inline-block"></div> 30%</td></tr>
+</table>
+</body></html>

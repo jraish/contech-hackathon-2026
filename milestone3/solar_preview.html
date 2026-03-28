@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><title>UMBRA Solar Path Preview</title>
+<style>body{font-family:system-ui;display:flex;flex-direction:column;align-items:center;padding:2rem;background:#fafafa}
+svg{border:1px solid #ddd;border-radius:8px;background:#fff}</style></head>
+<body>
+<h2>☀️ Sun-Path Diagram — NYC Summer Day (Dummy)</h2>
+<p>Top-down compass view · Dots = hourly sun positions · Center = zenith (90° elevation)</p>
+<svg width="500" height="500" viewBox="0 0 500 500">
+  <!-- Compass rings -->
+  <circle cx="250" cy="250" r="200" fill="none" stroke="#e0e0e0" stroke-width="1"/>
+  <circle cx="250" cy="250" r="133" fill="none" stroke="#e0e0e0" stroke-width="0.5" stroke-dasharray="4"/>
+  <circle cx="250" cy="250" r="67" fill="none" stroke="#e0e0e0" stroke-width="0.5" stroke-dasharray="4"/>
+  <!-- Compass labels -->
+  <text x="250" y="30" text-anchor="middle" font-size="14" fill="#666">N (0°)</text>
+  <text x="475" y="255" text-anchor="middle" font-size="14" fill="#666">E (90°)</text>
+  <text x="250" y="480" text-anchor="middle" font-size="14" fill="#666">S (180°)</text>
+  <text x="25" y="255" text-anchor="middle" font-size="14" fill="#666">W (270°)</text>
+  <!-- Cross hairs -->
+  <line x1="250" y1="50" x2="250" y2="450" stroke="#e0e0e0" stroke-width="0.5"/>
+  <line x1="50" y1="250" x2="450" y2="250" stroke="#e0e0e0" stroke-width="0.5"/>
+  <!-- Sun path arc -->
+  <path d="M 416.0 163.6 L 406.2 200.1 L 387.4 228.2 L 363.6 249.6 L 337.2 266.2 L 309.7 280.7 L 277.2 297.2 L 234.6 307.5 L 191.9 301.4 L 155.8 288.0" fill="none" stroke="#f59e0b" stroke-width="2" stroke-linecap="round"/>
+  <!-- Hour dots -->
+    <circle cx="416.0" cy="163.6" r="5" fill="#e8590c" stroke="#fff" stroke-width="1.5"/>
+    <text x="424.0" y="167.6" font-size="11" fill="#333">6h (62° az, 6° el)</text>
+    <circle cx="406.2" cy="200.1" r="5" fill="#e8590c" stroke="#fff" stroke-width="1.5"/>
+    <text x="414.2" y="204.1" font-size="11" fill="#333">7h (72° az, 16° el)</text>
+    <circle cx="387.4" cy="228.2" r="5" fill="#e8590c" stroke="#fff" stroke-width="1.5"/>
+    <text x="395.4" y="232.2" font-size="11" fill="#333">8h (81° az, 27° el)</text>
+    <circle cx="363.6" cy="249.6" r="5" fill="#e8590c" stroke="#fff" stroke-width="1.5"/>
+    <text x="371.6" y="253.6" font-size="11" fill="#333">9h (90° az, 39° el)</text>
+    <circle cx="337.2" cy="266.2" r="5" fill="#e8590c" stroke="#fff" stroke-width="1.5"/>
+    <text x="345.2" y="270.2" font-size="11" fill="#333">10h (100° az, 50° el)</text>
+    <circle cx="309.7" cy="280.7" r="5" fill="#e8590c" stroke="#fff" stroke-width="1.5"/>
+    <text x="317.7" y="284.7" font-size="11" fill="#333">11h (117° az, 60° el)</text>
+    <circle cx="277.2" cy="297.2" r="5" fill="#e8590c" stroke="#fff" stroke-width="1.5"/>
+    <text x="285.2" y="301.2" font-size="11" fill="#333">12h (150° az, 66° el)</text>
+    <circle cx="234.6" cy="307.5" r="5" fill="#e8590c" stroke="#fff" stroke-width="1.5"/>
+    <text x="242.6" y="311.5" font-size="11" fill="#333">13h (195° az, 63° el)</text>
+    <circle cx="191.9" cy="301.4" r="5" fill="#e8590c" stroke="#fff" stroke-width="1.5"/>
+    <text x="199.9" y="305.4" font-size="11" fill="#333">14h (228° az, 55° el)</text>
+    <circle cx="155.8" cy="288.0" r="5" fill="#e8590c" stroke="#fff" stroke-width="1.5"/>
+    <text x="163.8" y="292.0" font-size="11" fill="#333">15h (248° az, 44° el)</text>
+  <!-- Center dot -->
+  <circle cx="250" cy="250" r="3" fill="#999"/>
+</svg>
+</body></html>
